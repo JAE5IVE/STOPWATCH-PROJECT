@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body class="light">
+    <!-- Theme Toggle -->
+    <button class="toggle-button" id="toggleTheme">
+      Switch to Dark Mode 🌙
+    </button>
+
+    <!--Display-->
+    <div class="Stopwatch" id="stopwatch-display">00:00:00.000</div>
+
+    <!-- Control buttons -->
+    <div class="control-buttons">
+      <button class="start" id="start-button">Start</button>
+      <button class="stop" id="stop-button">Pause</button>
+      <button class="reset" id="reset-button">Reset</button>
+      <button class="lap" id="lap-button">Lap</button>
+    </div>
+
+    <!-- Lap Times -->
+    <div class="laps" id="laps"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
