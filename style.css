@@ -92,10 +92,19 @@ body.dark .toggle-button {
   max-height: 200px;
   overflow-y: auto;
 }
+/* Default Lap Item Style */
 .lap-item {
   font-size: 1rem;
-  padding: 5px 0;
+  padding: 8px 0;
+  margin-bottom: 6px; /* adds a gap between each lap */
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  color: #222; /* dark text for light mode */
+}
+
+/* Dark Mode Lap Item */
+body.dark .lap-item {
+  color: navajowhite; /* bright yellow text in dark mode */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Mobile Responsive */
