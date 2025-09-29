@@ -2,6 +2,7 @@ let milliseconds = 0,
   seconds = 0,
   minutes = 0,
   hours = 0;
+
 let display = document.getElementById("stopwatch-display");
 let interval = null;
 let running = false;
@@ -30,18 +31,21 @@ function updateTime() {
   display.textContent = `${h}:${m}:${s}.${ms}`;
 }
 
-// Start Button
-document.getElementById("start-button").addEventListener("click", () => {
-  if (!running) {
-    interval = setInterval(updateTime, 10); // update every 10ms
-    running = true;
-  }
-});
+// ✅ Start/Stop Toggle Button
+let startStopBtn = document.getElementById("start-stop-button");
 
-// Pause Button
-document.getElementById("stop-button").addEventListener("click", () => {
-  clearInterval(interval);
-  running = false;
+startStopBtn.addEventListener("click", () => {
+  if (!running) {
+    // Start
+    interval = setInterval(updateTime, 10); // still using setInterval
+    running = true;
+    startStopBtn.textContent = "Stop";
+  } else {
+    // Stop
+    clearInterval(interval);
+    running = false;
+    startStopBtn.textContent = "Start";
+  }
 });
 
 // Reset Button
@@ -51,6 +55,7 @@ document.getElementById("reset-button").addEventListener("click", () => {
   milliseconds = seconds = minutes = hours = 0;
   display.textContent = "00:00:00.000";
   lapsContainer.innerHTML = "";
+  startStopBtn.textContent = "Start"; // reset button text
 });
 
 // Lap Button
@@ -59,12 +64,11 @@ document.getElementById("lap-button").addEventListener("click", () => {
     let lapTime = display.textContent;
     let lapItem = document.createElement("div");
     lapItem.className = "lap-item";
-    lapItem.textContent = `Lap ${
-      lapsContainer.children.length + 1
-    }: ${lapTime}`;
+    lapItem.textContent = `Lap ${lapsContainer.children.length + 1}: ${lapTime}`;
     lapsContainer.appendChild(lapItem);
   }
 });
+
 
 // Theme Toggle
 let toggleBtn = document.getElementById("toggleTheme");
