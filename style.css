@@ -76,10 +76,10 @@ button:hover {
   border: none;
 }
 
-/* When in dark mode, make toggle button white */
+/* When in dark mode */
 body.dark .toggle-button {
   background: white;
-  color: #007bff; /* blue text so it’s visible */
+  color: #007bff;
 }
 
 .laps {
@@ -96,14 +96,14 @@ body.dark .toggle-button {
 .lap-item {
   font-size: 1rem;
   padding: 8px 0;
-  margin-bottom: 6px; /* adds a gap between each lap */
+  margin-bottom: 6px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  color: #222; /* dark text for light mode */
+  color: #222;
 }
 
 /* Dark Mode Lap Item */
 body.dark .lap-item {
-  color: navajowhite; /* bright yellow text in dark mode */
+  color: navajowhite;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 

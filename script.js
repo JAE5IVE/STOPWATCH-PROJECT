@@ -31,13 +31,13 @@ function updateTime() {
   display.textContent = `${h}:${m}:${s}.${ms}`;
 }
 
-// ✅ Start/Stop Toggle Button
+// Start/Stop Toggle Button
 let startStopBtn = document.getElementById("start-stop-button");
 
 startStopBtn.addEventListener("click", () => {
   if (!running) {
     // Start
-    interval = setInterval(updateTime, 10); // still using setInterval
+    interval = setInterval(updateTime, 10);
     running = true;
     startStopBtn.textContent = "Stop";
   } else {
@@ -55,7 +55,7 @@ document.getElementById("reset-button").addEventListener("click", () => {
   milliseconds = seconds = minutes = hours = 0;
   display.textContent = "00:00:00.000";
   lapsContainer.innerHTML = "";
-  startStopBtn.textContent = "Start"; // reset button text
+  startStopBtn.textContent = "Start";
 });
 
 // Lap Button
@@ -64,11 +64,12 @@ document.getElementById("lap-button").addEventListener("click", () => {
     let lapTime = display.textContent;
     let lapItem = document.createElement("div");
     lapItem.className = "lap-item";
-    lapItem.textContent = `Lap ${lapsContainer.children.length + 1}: ${lapTime}`;
+    lapItem.textContent = `Lap ${
+      lapsContainer.children.length + 1
+    }: ${lapTime}`;
     lapsContainer.appendChild(lapItem);
   }
 });
-
 
 // Theme Toggle
 let toggleBtn = document.getElementById("toggleTheme");
